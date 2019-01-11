@@ -1,0 +1,89 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+        jjwtVersion = '0.9.1'
+        mapStructVersion = '1.2.0.Final'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'hxw.security'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+    compile 'redis.clients:jedis:3.0.1'
+
+    // spring2.0集成redis所需common-pool2
+    compile 'org.apache.commons:commons-pool2:2.6.0'
+    compile 'org.apache.commons:commons-lang3:3.8.1'
+
+    compile "io.jsonwebtoken:jjwt:${jjwtVersion}"
+
+    // 监控sql日志
+    compile 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
+    // RESTful APIs swagger2
+    compile 'io.springfox:springfox-swagger2:2.9.2'
+    compile 'io.springfox:springfox-swagger-ui:2.9.2'
+
+    compile 'mysql:mysql-connector-java'
+
+    // druid数据源驱动
+    compile 'com.alibaba:druid-spring-boot-starter:1.1.10'
+
+    // 工具包
+    compile 'cn.hutool:hutool-all:4.4.0'
+
+    // fastjson
+    compile 'com.alibaba:fastjson:1.2.54'
+
+    // mapStruct依赖
+    compile "org.mapstruct:mapstruct-jdk8:${mapStructVersion}"
+    compile "org.mapstruct:mapstruct-processor:${mapStructVersion}"
+
+    compile 'javax.inject:javax.inject:1'
+
+    // 邮件依赖
+    compile 'javax.mail:mail:1.4.7'
+
+    // 七牛云存储
+    compile 'com.qiniu:qiniu-java-sdk:7.2.18'
+
+    // 支付宝依赖
+    compile 'com.alipay.sdk:alipay-sdk-java:3.4.49.ALL'
+
+    compile 'org.apache.commons:commons-configuration2:2.4'
+
+    compile 'org.quartz-scheduler:quartz:2.3.0'
+
+    compileOnly 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
