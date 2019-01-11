@@ -46,17 +46,11 @@ dependencies {
 
     compile "io.jsonwebtoken:jjwt:${jjwtVersion}"
 
-    // 监控sql日志
-    compile 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
-
     // RESTful APIs swagger2
     compile 'io.springfox:springfox-swagger2:2.9.2'
     compile 'io.springfox:springfox-swagger-ui:2.9.2'
 
-    compile 'mysql:mysql-connector-java'
-
-    // druid数据源驱动
-    compile 'com.alibaba:druid-spring-boot-starter:1.1.10'
+    runtime 'mysql:mysql-connector-java'
 
     // 工具包
     compile 'cn.hutool:hutool-all:4.4.0'
