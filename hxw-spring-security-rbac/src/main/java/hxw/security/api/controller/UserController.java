@@ -1,4 +1,4 @@
-package me.zhengjie.system.rest;
+package hxw.security.api.controller;
 
 import hxw.security.api.service.UserService;
 import hxw.security.api.service.dto.UserDTO;
