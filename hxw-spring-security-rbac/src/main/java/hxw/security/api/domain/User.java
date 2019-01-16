@@ -37,6 +37,9 @@ public class User implements Serializable {
     private String username;
 
     @Column
+    private String usernameEn;
+
+    @Column
     private String avatar;
 
     @NotBlank
